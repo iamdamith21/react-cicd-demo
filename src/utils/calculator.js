@@ -31,3 +31,11 @@ export function power(base, exp) {
   return Math.pow(Number(base), Number(exp));
 }
 
+export function modulo(a, b) {
+  if (Number(b) === 0) {
+    throw new Error('Cannot modulo by zero');
+  }
+  return Number(a) % Number(b);
+}
+
+

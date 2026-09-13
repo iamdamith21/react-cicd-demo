@@ -10,7 +10,7 @@ import {
   RefreshCw,
   Sparkles
 } from 'lucide-react';
-import { add, subtract, multiply, divide, power } from './utils/calculator';
+import { add, subtract, multiply, divide, power, modulo } from './utils/calculator';
 
 function App() {
   const [num1, setNum1] = useState(10);
@@ -32,6 +32,8 @@ function App() {
           return divide(num1, num2);
         case 'power':
           return power(num1, num2);
+        case 'modulo':
+          return modulo(num1, num2);
         default:
           return 0;
       }
@@ -194,6 +196,12 @@ function App() {
                 onClick={() => setOperation('power')}
               >
                 ^ Pow
+              </button>
+              <button
+                className={`calc-btn ${operation === 'modulo' ? 'active' : ''}`}
+                onClick={() => setOperation('modulo')}
+              >
+                % Mod
               </button>
             </div>
 

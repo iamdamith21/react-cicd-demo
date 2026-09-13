@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest';
-import { add, subtract, multiply, divide, power } from './calculator';
+import { add, subtract, multiply, divide, power, modulo } from './calculator';
 
 describe('Calculator Utility Unit Tests (CI Pipeline)', () => {
   describe('add()', () => {
@@ -45,6 +45,17 @@ describe('Calculator Utility Unit Tests (CI Pipeline)', () => {
 
     it('handles power of zero', () => {
       expect(power(10, 0)).toBe(1);
+    });
+  });
+
+  describe('modulo()', () => {
+    it('correctly calculates remainder', () => {
+      expect(modulo(10, 3)).toBe(1);
+      expect(modulo(15, 5)).toBe(0);
+    });
+
+    it('throws error when performing modulo by zero', () => {
+      expect(() => modulo(10, 0)).toThrow('Cannot modulo by zero');
     });
   });
 });
