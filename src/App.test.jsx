@@ -35,5 +35,11 @@ describe('App Component CI Tests', () => {
     fireEvent.click(powButton);
     // 10 ^ 5 = 100000
     expect(resultElement.textContent).toBe('100000');
+
+    // Click modulo button
+    const modButton = screen.getByText('% Mod');
+    fireEvent.click(modButton);
+    // 10 % 5 = 0
+    expect(resultElement.textContent).toBe('0');
   });
 });
