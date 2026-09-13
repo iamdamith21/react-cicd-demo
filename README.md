@@ -50,6 +50,36 @@ npm run build
 
 ---
 
+## 🐳 Docker Deployment
+
+You can run this application in a lightweight production container (Nginx + React):
+
+### Using Docker Compose (Recommended)
+
+```bash
+docker compose up -d --build
+```
+
+Access the app at: `http://localhost:8080`
+
+To stop:
+
+```bash
+docker compose down
+```
+
+### Using Docker CLI
+
+```bash
+# Build Docker image
+docker build -t react-cicd-demo .
+
+# Run container on port 8080
+docker run -d -p 8080:80 --name react-cicd-container react-cicd-demo
+```
+
+---
+
 ## 📁 Repository Structure
 
 ```text
