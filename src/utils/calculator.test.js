@@ -1,0 +1,39 @@
+import { describe, it, expect } from 'vitest';
+import { add, subtract, multiply, divide } from './calculator';
+
+describe('Calculator Utility Unit Tests (CI Pipeline)', () => {
+  describe('add()', () => {
+    it('correctly adds two positive numbers', () => {
+      expect(add(2, 3)).toBe(5);
+    });
+
+    it('handles negative numbers', () => {
+      expect(add(-5, 10)).toBe(5);
+      expect(add(-4, -6)).toBe(-10);
+    });
+  });
+
+  describe('subtract()', () => {
+    it('correctly subtracts numbers', () => {
+      expect(subtract(10, 4)).toBe(6);
+      expect(subtract(5, 15)).toBe(-10);
+    });
+  });
+
+  describe('multiply()', () => {
+    it('correctly multiplies numbers', () => {
+      expect(multiply(3, 7)).toBe(21);
+      expect(multiply(-2, 5)).toBe(-10);
+    });
+  });
+
+  describe('divide()', () => {
+    it('correctly divides numbers', () => {
+      expect(divide(20, 4)).toBe(5);
+    });
+
+    it('throws error when dividing by zero', () => {
+      expect(() => divide(10, 0)).toThrow('Cannot divide by zero');
+    });
+  });
+});
