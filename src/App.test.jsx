@@ -29,5 +29,11 @@ describe('App Component CI Tests', () => {
     fireEvent.click(mulButton);
     // 10 * 5 = 50
     expect(resultElement.textContent).toBe('50');
+
+    // Click power button
+    const powButton = screen.getByText('^ Pow');
+    fireEvent.click(powButton);
+    // 10 ^ 5 = 100000
+    expect(resultElement.textContent).toBe('100000');
   });
 });
