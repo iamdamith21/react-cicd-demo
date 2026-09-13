@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest';
-import { add, subtract, multiply, divide } from './calculator';
+import { add, subtract, multiply, divide, power } from './calculator';
 
 describe('Calculator Utility Unit Tests (CI Pipeline)', () => {
   describe('add()', () => {
@@ -34,6 +34,17 @@ describe('Calculator Utility Unit Tests (CI Pipeline)', () => {
 
     it('throws error when dividing by zero', () => {
       expect(() => divide(10, 0)).toThrow('Cannot divide by zero');
+    });
+  });
+
+  describe('power()', () => {
+    it('correctly calculates exponentiation', () => {
+      expect(power(2, 3)).toBe(8);
+      expect(power(5, 2)).toBe(25);
+    });
+
+    it('handles power of zero', () => {
+      expect(power(10, 0)).toBe(1);
     });
   });
 });

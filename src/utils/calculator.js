@@ -26,3 +26,8 @@ export function divide(a, b) {
   }
   return Number(a) / Number(b);
 }
+
+export function power(base, exp) {
+  return Math.pow(Number(base), Number(exp));
+}
+
